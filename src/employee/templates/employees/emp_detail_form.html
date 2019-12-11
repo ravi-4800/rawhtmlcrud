@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Employee Detail Form</h3>
+<form action="./{{emp_id}}" method="POST"> {%csrf_token%}
+	<table>
+		<tr>
+			<th>Name: </th>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<th>Company Id: </th>
+			<td><input type="text" name="company_id"></td>
+		</tr>
+		<tr>
+			<th>Age: </th>
+			<td><input type="number" min="1" name="age"></td>
+		</tr>
+		<tr>
+			<th>Email: </th>
+			<td><input type="email" name="email"></td>
+		</tr>
+		<tr>
+			<th>Location: </th>
+			<td><input type="text" name="location"></td>
+		</tr>
+		<tr>
+		<th>Designation: </th>
+		<td><input list="designations" name="designation">
+			<datalist id="designations">
+				<option value="Software Engineer">Software Engineer</option>
+				<option value="Project Engineer">Project Engineer</option>
+				<option value="Engineering Lead">Engineering Lead</option>
+				<option value="Project Lead">Project Lead</option>
+				<option value="Quality Analyst">Quality Analyst(QA)</option>
+			</datalist></td>
+		</tr>
+		<tr>
+			<th>Skill: </th>
+			<td><input type="text" name="skill"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Save"></td>
+		</tr>
+	</table>
+</form>
+{% endblock %}

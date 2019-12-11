@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content_details %}
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Company id</th>
+			<th>Age</th>
+			<th>Email</th>
+			<th>Location</th>
+			<th>Designation</th>
+			<th>Skill</th>
+			<th>Id</th>
+			<th>Update/Delete</th>
+		</tr>
+		{% for emp in employees %}
+			<tr>
+				<td>{{emp.name}}</td>
+				<td>{{emp.company_id}}</td>
+				<td>{{emp.age}}</td>
+				<td>{{emp.email}}</td>
+				<td>{{emp.location}}</td>
+				<td>{{emp.designation}}</td>
+				<td>{{emp.skill}}</td>
+				<td>{{emp.id}}</td>
+				<td><a href="update/{{emp.id}}">Update</a> | <a href="delete/{{emp.id}}">Delete</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<form style="margin-left: 30px" action="create/"><input type="submit" value="Add Employee"></form>
+	
+{% endblock %}

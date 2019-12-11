@@ -3,31 +3,32 @@
 {% block content %}
 
 <h3>Employee Detail Form</h3>
-<form action="./{{emp_id}}" method="POST"> {%csrf_token%}
+
+<form name="form" action="./{{emp_id}}" method="POST" onsubmit="return emailValidation()"> {%csrf_token%}
 	<table>
 		<tr>
 			<th>Name: </th>
-			<td><input type="text" name="name"></td>
+			<td><input type="text" name="name" value="{{emp.name}}" required></td>
 		</tr>
 		<tr>
 			<th>Company Id: </th>
-			<td><input type="text" name="company_id"></td>
+			<td><input type="number" min="1" max="999999" name="company_id" value="{{emp.company_id}}" required></td>
 		</tr>
 		<tr>
 			<th>Age: </th>
-			<td><input type="number" min="1" name="age"></td>
+			<td><input type="number" min="1" name="age" value="{{emp.age}}" required></td>
 		</tr>
 		<tr>
 			<th>Email: </th>
-			<td><input type="email" name="email"></td>
+			<td><input type="email" name="email" value="{{emp.email}}" required></td>
 		</tr>
 		<tr>
 			<th>Location: </th>
-			<td><input type="text" name="location"></td>
+			<td><input type="text" name="location" value="{{emp.location}}" required></td>
 		</tr>
 		<tr>
 		<th>Designation: </th>
-		<td><input list="designations" name="designation">
+		<td><input list="designations" name="designation" value="{{emp.designation}}" required>
 			<datalist id="designations">
 				<option value="Software Engineer">Software Engineer</option>
 				<option value="Project Engineer">Project Engineer</option>
@@ -38,11 +39,12 @@
 		</tr>
 		<tr>
 			<th>Skill: </th>
-			<td><input type="text" name="skill"></td>
+			<td><input type="text" name="skill" value="{{emp.skill}}" required></td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="Save"></td>
 		</tr>
 	</table>
 </form>
+
 {% endblock %}

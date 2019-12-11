@@ -5,6 +5,6 @@ class Employee(models.Model):
 	company_id  = models.CharField(max_length=30)
 	age         = models.DecimalField(max_digits=3,decimal_places=0)
 	email       = models.EmailField(max_length=30)
-	location    = models.CharField(max_length=30)
+	location    = models.CharField(max_length=30, blank=True)
 	designation = models.CharField(max_length=30)
 	skill       = models.CharField(max_length=30)

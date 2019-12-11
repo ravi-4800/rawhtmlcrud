@@ -8,8 +8,25 @@
 			padding: 15px;
 		}
 	</style>
+
 </head>
+
 <body>
+	<script type="text/javascript">
+		var i = 0;
+		function emailValidation() {
+			var email = document.forms['form']['email'];
+			var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(email.value.match(emailformat)) {
+				return true;
+			} else {
+				window.alert("Enter a valid email");
+				email.focus();
+				return false;
+			}
+		}
+
+	</script>
 	{% block content %}
 		
 	{% endblock %}

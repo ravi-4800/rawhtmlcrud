@@ -13,17 +13,31 @@
 
 <body>
 	<script type="text/javascript">
-		var i = 0;
-		function emailValidation() {
+		function formValidation() {
+			var name = document.forms['form']['name'];
+			var nameformat = /^[A-Za-z]+(\s[A-Za-z]+\s*)*$/;
+
+			var company_id = document.forms['form']['company_id'];
+			var companyidformat = /PSL[0-9]{6}/;
+
 			var email = document.forms['form']['email'];
-			var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			if(email.value.match(emailformat)) {
-				return true;
-			} else {
-				window.alert("Enter a valid email");
-				email.focus();
+			var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;		
+
+			if(!name.value.match(nameformat)) {
+				window.alert('no numbers allowed at name field');
 				return false;
-			}
+			}	
+
+			if(!company_id.value.match(companyidformat)) {
+				window.alert('company field must start with PSL and then 6 digits like PSL000001');
+				return false;
+			} 
+
+			if(!email.value.match(emailformat)) {
+				window.alert('Enter a valid email');
+				return false;
+			} 
+			return true;
 		}
 
 	</script>

@@ -11,11 +11,11 @@
 			<th>Designation</th>
 			<th>Skill</th>
 			<th>Id</th>
-			<th>Update/Delete</th>
+			<th>Delete</th>
 		</tr>
 		{% for emp in employees %}
 			<tr>
-				<td>{{emp.name}}</td>
+				<td><a href="update/{{emp.id}}">{{emp.name}}</a></td>
 				<td>{{emp.company_id}}</td>
 				<td>{{emp.age}}</td>
 				<td>{{emp.email}}</td>
@@ -23,7 +23,7 @@
 				<td>{{emp.designation}}</td>
 				<td>{{emp.skill}}</td>
 				<td>{{emp.id}}</td>
-				<td><a href="update/{{emp.id}}">Update</a> | <a href="delete/{{emp.id}}">Delete</a></td>
+				<td><a href="delete/{{emp.id}}">Delete</a></td>
 			</tr>
 		{% endfor %}
 	</table>

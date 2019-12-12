@@ -7,27 +7,27 @@
 <form name="form" action="./{{emp_id}}" method="POST" onsubmit="return formValidation()"> {%csrf_token%}
 	<table>
 		<tr>
-			<th>Name: </th>
+			<th align="left">Name: </th>
 			<td><input type="text" name="name" value="{{emp.name}}" required></td>
 		</tr>
 		<tr>
-			<th>Company Id: </th>
+			<th align="left">Company Id: </th>
 			<td><input type="text" name="company_id" value="{{emp.company_id}}" required></td>
 		</tr>
 		<tr>
-			<th>Age: </th>
+			<th align="left">Age: </th>
 			<td><input type="number" min="1" name="age" value="{{emp.age}}" required></td>
 		</tr>
 		<tr>
-			<th>Email: </th>
+			<th align="left">Email: </th>
 			<td><input type="email" name="email" value="{{emp.email}}" required></td>
 		</tr>
 		<tr>
-			<th>Location: </th>
+			<th align="left">Location: </th>
 			<td><input type="text" name="location" value="{{emp.location}}" required></td>
 		</tr>
 		<tr>
-		<th>Designation: </th>
+		<th align="left">Designation: </th>
 		<td><input list="designations" name="designation" value="{{emp.designation}}" required>
 			<datalist id="designations">
 				<option value="Software Engineer">Software Engineer</option>
@@ -38,7 +38,7 @@
 			</datalist></td>
 		</tr>
 		<tr>
-			<th>Skill: </th>
+			<th align="left">Skill: </th>
 			<td><input type="text" name="skill" value="{{emp.skill}}" required></td>
 		</tr>
 		<tr>
